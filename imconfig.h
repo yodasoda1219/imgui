@@ -29,6 +29,12 @@
 #else
 #define IMGUI_API __declspec(dllimport)
 #endif
+#elif defined _IMGUI_BUILD_SO
+#ifdef _IMGUI_BUILD
+#define IMGUI_API __attribute__((__visibility__("default")))
+#else
+#define IMGUI_API
+#endif
 #endif
 
 //---- Don't define obsolete functions/enums/behaviors. Consider enabling from time to time after updating to avoid using soon-to-be obsolete function/names.
