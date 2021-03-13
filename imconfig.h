@@ -29,7 +29,7 @@
 #else
 #define IMGUI_API __declspec(dllimport)
 #endif
-#elif defined _IMGUI_BUILD_SO
+#elif defined(_IMGUI_BUILD_SO) || defined(_IMGUI_BUILD_DYLIB)
 #ifdef _IMGUI_BUILD
 #define IMGUI_API __attribute__((__visibility__("default")))
 #else
